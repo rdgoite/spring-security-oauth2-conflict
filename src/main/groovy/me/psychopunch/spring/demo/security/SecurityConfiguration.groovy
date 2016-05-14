@@ -5,6 +5,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter
 
 @Configuration
 class SecurityConfiguration {
@@ -30,5 +32,8 @@ class SecurityConfiguration {
         }
 
     }
+
+    @EnableResourceServer
+    static class ResourceServer extends ResourceServerConfigurerAdapter {}
 
 }
